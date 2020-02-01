@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">CS449-Lab1</string>
+    <string name="app_name">Umpire Buddy v1.0</string>
+    <string name="balls_button">BALLS</string>
+    <string name="balls_counter">0</string>
+    <string name="strikes_button">STRIKES</string>
+    <string name="strikes_counter">0</string>
+    <string name="reset_button">RESET</string>
+    <string name="end_button">END APP</string>
 </resources>
