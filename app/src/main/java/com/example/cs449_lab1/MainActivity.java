@@ -2,6 +2,9 @@ package com.example.cs449_lab1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -29,7 +32,7 @@ public class MainActivity extends AppCompatActivity{
         ballsButton = findViewById((R.id.ballsButton));
 
         strikesCounter = findViewById((R.id.strikesCounter));
-        strikesButton = findViewById((R.id.stikesButton));
+        strikesButton = findViewById((R.id.strikesButton));
 
         resetButton = findViewById((R.id.resetButon));
         endButton = findViewById((R.id.endButton));
@@ -37,11 +40,17 @@ public class MainActivity extends AppCompatActivity{
         ballsCounter.setText("0");
         strikesCounter.setText("0");
 
+
         ballsButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 balls = balls + 1;
                 ballsCounter.setText(String.valueOf((balls)));
+
+                if (balls == 4){
+
+                    alert("Walk!");
+                }
             }
         });
 
@@ -50,6 +59,10 @@ public class MainActivity extends AppCompatActivity{
             public void onClick(View v){
                 strikes = strikes + 1;
                 strikesCounter.setText(String.valueOf(strikes));
+
+                if (strikes == 3){
+                    alert("Out!");
+                }
             }
         });
 
@@ -71,8 +84,28 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
-
-
-
     }
+
+    private void alert(String action){
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle(action);
+        //builder.setMessage("The batter walks.");
+        builder.setCancelable(false);
+        builder.setPositiveButton("Next Batter", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                balls = 0;
+                strikes = 0;
+                strikesCounter.setText(String.valueOf(strikes));
+                ballsCounter.setText(String.valueOf(balls));
+            }
+        });
+        builder.show();
+    }
+
+    public void toAbout(View v){
+        Intent startNewActivity = new Intent(this, DisplayMessageActivity.class);
+        startActivity(startNewActivity);
+    }
+
 }

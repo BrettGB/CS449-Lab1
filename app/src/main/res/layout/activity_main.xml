@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:id="@+id/r1">
 
     <Button
         android:id="@+id/endButton"
@@ -36,7 +38,7 @@
         app:layout_constraintEnd_toStartOf="@+id/endButton"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/stikesButton" />
+        app:layout_constraintTop_toBottomOf="@+id/strikesButton" />
 
     <TextView
         android:id="@+id/strikesCounter"
@@ -54,12 +56,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/stikesButton"
+        app:layout_constraintStart_toEndOf="@+id/strikesButton"
         app:layout_constraintTop_toBottomOf="@+id/ballsCounter"
         tools:text="@string/strikes_counter" />
 
     <Button
-        android:id="@+id/stikesButton"
+        android:id="@+id/strikesButton"
         android:layout_width="150dp"
         android:layout_height="75dp"
         android:layout_marginStart="24dp"
@@ -108,5 +110,19 @@
         app:layout_constraintStart_toEndOf="@+id/ballsButton"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@string/balls_counter" />
+
+    <Button
+        android:id="@+id/about_button"
+        android:layout_width="107dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="600dp"
+        android:layout_marginBottom="83dp"
+        android:text="@string/about_button"
+        android:textSize="18sp"
+        android:onClick="toAbout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
