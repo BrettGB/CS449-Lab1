@@ -89,7 +89,6 @@ public class MainActivity extends AppCompatActivity{
     private void alert(String action){
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle(action);
-        //builder.setMessage("The batter walks.");
         builder.setCancelable(false);
         builder.setPositiveButton("Next Batter", new DialogInterface.OnClickListener() {
             @Override
